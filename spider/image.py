@@ -25,6 +25,7 @@ def downloadImg(html):
     #定义文件夹的名字
     t = time.localtime(time.time())
     foldername = str(t.__getattribute__("tm_year"))+"-"+str(t.__getattribute__("tm_mon"))+"-"+str(t.__getattribute__("tm_mday"))
+
     picpath = './%s' % (foldername) #下载到的本地目录
   
     if not os.path.exists(picpath):   #路径不存在时创建一个

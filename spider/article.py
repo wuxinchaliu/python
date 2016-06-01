@@ -98,7 +98,7 @@ def get_domain(url):
     return res
 
 if __name__ == '__main__':
-    url = "http://toutiao.com/a6290391209140109569/"
+    url = "http://toutiao.com/a6290460409251053825/"
     html = getHtml(url)
 
     return_data = downloadImg(html)
