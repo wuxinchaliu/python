@@ -3,7 +3,7 @@ import urllib
 import re
 import time
 import os
-
+import md5
 #显示下载进度
 def schedule(a,b,c):
     per = 100.0 * a * b / c
@@ -19,11 +19,13 @@ def getHtml(url):
 def downloadImg(html):
     reg = r'data-src="(.*?)">'
     imgre = re.compile(reg)
+    md = md5.new()
+
     imglist = re.findall(imgre, html)
-    print imglist 
     #定义文件夹的名字
     t = time.localtime(time.time())
     foldername = str(t.__getattribute__("tm_year"))+"-"+str(t.__getattribute__("tm_mon"))+"-"+str(t.__getattribute__("tm_mday"))
+
     picpath = './%s' % (foldername) #下载到的本地目录
   
     if not os.path.exists(picpath):   #路径不存在时创建一个
@@ -31,9 +33,10 @@ def downloadImg(html):
     x = 0
 
     for imgurl in imglist:
-        print imgurl
-        os._exit(0);
-        target = picpath+'/%s.jpg' % x
+        md.update(imgurl)
+        kk = md.hexdigest()
+
+        target = picpath+'/%s.jpg' % kk
         print 'Downloading image to location: ' + target + '\nurl=' + imgurl
         image = urllib.urlretrieve(imgurl, target, schedule)
         x += 1
