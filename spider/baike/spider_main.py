@@ -1,11 +1,16 @@
 #!/usr/local/bin/python
 
 # coding:utf8
-import url_manager, html_downloader, html_parser, html_outputer
+import html_downloader
+import html_parser
+
+import spider.baike.url_manager
+from spider.baike import html_outputer
+
 
 class SpiderMain(object):
     def __init__(self):
-        self.urls = url_manager.UrlManager()
+        self.urls = spider.baike.url_manager.UrlManager()
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOutputer()

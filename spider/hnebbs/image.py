@@ -39,7 +39,7 @@ def downloadImg(html):
         x += 1
     return image
 
-  
+
 if __name__ == '__main__':
 
     html = getHtml("http://toutiao.com/a6288819702621946113/#p=1")
