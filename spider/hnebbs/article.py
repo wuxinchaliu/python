@@ -13,8 +13,8 @@ import urlparse
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-db = MySQLdb.connect("112.124.25.174","qilin", "7bc8c81fc5fc95b535eb4de3ce0cf779", "hnedata")
-#db = MySQLdb.connect("localhost","root", "root@123", "renniso")
+
+db = MySQLdb.connect("localhost","root", "root@123", "wer")
 cursor = db.cursor()
 db.set_character_set('utf8')
 cursor.execute('SET NAMES utf8;')
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     if data:
         for dd in data:
             url = dd[1]
-            pic_path = "/alidata/www/www.hnebbs.com"
+            pic_path = "/alidata/www/qwer"
             if "toutiao" in dd[2]:
                 return_data = download_toutiao(url, pic_path)
             elif "qq" in dd[2]:

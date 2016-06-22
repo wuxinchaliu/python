@@ -9,7 +9,7 @@ import MySQLdb
 import hashlib
 import get_uid_data
 import urllib
-db = MySQLdb.connect("localhost","root", "root@123", "renniso")
+db = MySQLdb.connect("localhost","root", "root@123", "23")
 
 cursor = db.cursor()
 

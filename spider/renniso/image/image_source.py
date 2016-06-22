@@ -9,7 +9,7 @@ import MySQLdb
 import hashlib
 import get_uid_data
 import urllib
-db = MySQLdb.connect("localhost","root", "root@123", "renniso")
+db = MySQLdb.connect("localhost","root", "root@123", "1")
 
 cursor = db.cursor()
 
@@ -200,11 +200,11 @@ def get_thumb_image(image_url):
 
 
 if __name__ == '__main__':
-    #get_home_cate_name("http://www.996yx.com/")
+
     data = get_cate_data()
 
     for dd in data:
-        url = "http://www.996yx.com/"+dd[2]
+        url = ""+dd[2]
         print "start downloading:"+url
         get_cate_page(url)
         update_cate_status(dd[0])

@@ -18,7 +18,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-db = MySQLdb.connect("localhost","root", "root@123", "renniso")
+db = MySQLdb.connect("localhost","root", "root@123", "23")
 cursor = db.cursor()
 
 redis = redis.Redis("localhost", 6379)
@@ -96,12 +96,12 @@ def update_user(uid):
 
 
 def send_email(content):
-    sender = 'qi138138lin@163.com'
-    receiver = '164158310@qq.com'
+    sender = '123123123'
+    receiver = '123123123@qq.com'
 
     smtp_server = 'smtp.163.com'
-    username = 'qi138138lin@163.com'
-    password = '13317597983Qilin'
+    username = '123123'
+    password = '123123'
 
     subject = 'spider pan error'
     msg = MIMEText('<html><h1>hello windgo</h1><div>'+content+'</div></html>','html','utf-8')
